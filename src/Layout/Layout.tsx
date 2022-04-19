@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
-import { Header } from "./Header";
+import { HeaderComponent } from "./Header";
 
-export const Layout = () => {
+type Props = {
+    children: React.ReactNode;
+};
+
+export const Layout = ({ children }: Props) => {
     return (
         <Fragment>
-            <Header />
-            <main>Hola</main>
+            <HeaderComponent />
+            <main>{children}</main>
         </Fragment>
     );
 };

@@ -9,6 +9,9 @@ header {
     display: flex;
     align-items: center;
 }
+/*.logo img {
+    border-radius: 25px; 
+}*/
 ul {
     display: flex;
 }

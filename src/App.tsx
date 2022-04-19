@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Layout } from "./Layout";
+import { AppRouters } from "./Routers/AppRouters";
 
 function App() {
     return (
         <div className="App">
-            <Layout />
+            <AppRouters />
         </div>
     );
 }
