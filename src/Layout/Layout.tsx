@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { HeaderComponent } from "./Header";
+import { Header } from "./Header";
 
 type Props = {
     children: React.ReactNode;
@@ -8,7 +8,7 @@ type Props = {
 export const Layout = ({ children }: Props) => {
     return (
         <Fragment>
-            <HeaderComponent />
+            <Header />
             <main>{children}</main>
         </Fragment>
     );
