@@ -4,14 +4,14 @@ import Logo from "../../img/Logo.svg";
 import "./Header.css";
 const LogoComponent = () => {
     return (
-        <div className="logo">
+        <figure className="logo">
             <Link to="/">
                 <img src={Logo} alt="logo" />
             </Link>
             {/* <Link to="/">
                 <span>MyList</span>
             </Link> */}
-        </div>
+        </figure>
     );
 };
 const NavComponent = () => {
@@ -37,6 +37,18 @@ const NavComponent = () => {
             window.removeEventListener("resize", changeWidth);
         };
     });
+    const MenuItems = Items.map((item) => {
+        return (
+            <li
+                className={`item ${MobileSize ? "mobile" : "desktop"}`}
+                onClick={MenuState}
+            >
+                <Link className="link" to={item.rute}>
+                    <div>{item.name}</div>
+                </Link>
+            </li>
+        );
+    });
     return (
         <nav>
             {MobileSize ? (
@@ -55,27 +67,11 @@ const NavComponent = () => {
                             openMenu ? "menu-moblie active" : "menu-moblie"
                         }
                     >
-                        {Items.map((item) => {
-                            return (
-                                <li className="item mobile">
-                                    <Link className="link" to={item.rute}>
-                                        <span>{item.name}</span>
-                                    </Link>
-                                </li>
-                            );
-                        })}
+                        {MenuItems}
                     </ul>
                 </Fragment>
             ) : (
-                <ul className="menu-desktop">
-                    {Items.map((item) => {
-                        return (
-                            <li className="item desktop">
-                                <Link to={item.rute}>{item.name}</Link>
-                            </li>
-                        );
-                    })}
-                </ul>
+                <ul className="menu-desktop">{MenuItems}</ul>
             )}
         </nav>
     );
