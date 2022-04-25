@@ -10,7 +10,10 @@ export const AppRouters: FC = () => {
             <Layout>
                 <Routes>
                     <Route path={routes.home} element={<HomePage />} />
-                    <Route path={routes.home} element={<AnimesPage />} />
+                    <Route
+                        path={routes.catalog.animes}
+                        element={<AnimesPage />}
+                    />
                 </Routes>
                 {/* <Route path="*" component={NotFoundPage} /> */}
             </Layout>
