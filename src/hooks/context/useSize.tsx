@@ -16,9 +16,11 @@ export const useSize = () => {
 
     const mobileSize = width <= 960;
 
+    const styleType = mobileSize ? "mobile" : "desktop";
     return {
         width,
         changeWidth,
         mobileSize,
+        styleType,
     };
 };

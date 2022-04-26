@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 /* import * as Font from "expo-font"; */
 import { AppRouters } from "./Routers/AppRouters";
 

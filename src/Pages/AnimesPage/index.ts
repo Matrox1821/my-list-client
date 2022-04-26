@@ -1,1 +1,0 @@
-export { AnimesPage } from "./AnimesPage";
