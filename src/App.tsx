@@ -1,9 +1,13 @@
 import React from "react";
 import "./App.css";
 /* import * as Font from "expo-font"; */
+import { Provider } from "react-redux";
 import { AppRouters } from "./Routers/AppRouters";
 
-function App() {
+type Props = {
+    store:any
+}
+function App({store}:Props) {
     /* const { fontsLoaded, setFontsLoaded } = useState<boolean>(false);
     const loadFonts = async () => {
         Font.loadAsync({
@@ -17,9 +21,11 @@ function App() {
         }
     }); */
     return (
-        <div className="App">
-            <AppRouters />
-        </div>
+        <Provider store={store}>
+            <div className="App">
+                <AppRouters />
+            </div>
+        </Provider>
     );
 }
 
