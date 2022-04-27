@@ -1,9 +1,8 @@
 import React, { FC } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routes } from "../helpers/routes";
-import { Layout } from "../Layout";
-import { HomePage } from "../Pages/HomePage";
-import { AnimesPage } from "../Pages/AnimesPage";
+import { Layout } from "../components/Layout";
+import { HomePage, AnimesPage } from "../Pages";
 export const AppRouters: FC = () => {
     return (
         <Router>

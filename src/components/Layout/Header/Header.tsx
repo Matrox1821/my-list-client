@@ -1,10 +1,10 @@
 import React, { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/images/Logo.svg";
-import { useDropdown } from "../../hooks/useDropdown";
-import { useMenu } from "../../hooks/useMenu";
-import { useSize } from "../../hooks/useSize";
-import "./Header.css";
+import Logo from "../../../assets/images/Logo.svg";
+import { useDropdown } from "../../../hooks/context/useDropdown";
+import { useMenu } from "../../../hooks/context/useMenu";
+import { useSize } from "../../../hooks/context/useSize";
+import "../../../assets/css/Header.css";
 
 const LogoComponent = () => {
     return (
@@ -30,13 +30,11 @@ const ItemDropdown = ({ name, type, rute, click }: ItemsDropdownProps) => {
 
     return (
         <li
-            className={`dropdown-item ${
-                size.mobileSize ? "mobile" : "desktop"
-            }`}
+            className={`dd-item ${size.mobileSize ? "mobile" : "desktop"}`}
             onClick={click}
         >
-            <Link className="dropdown-link" to={rute}>
-                <div className="dd-link-name">{name}</div>
+            <Link className="dd-link" to={rute}>
+                <div className={`dd-link-name ${size.styleType}`}>{name}</div>
             </Link>
         </li>
     );
@@ -49,7 +47,6 @@ type ItemsProps = {
     click?: () => void;
 };
 const Item = ({ name, type, rute, children, click }: ItemsProps) => {
-    /* const menu = useMenu(); */
     const size = useSize();
     const dropdown = useDropdown();
     const isLink = type === "link";
@@ -64,8 +61,10 @@ const Item = ({ name, type, rute, children, click }: ItemsProps) => {
                 </Link>
             ) : (
                 <Fragment>
-                    <div className="dropdown-name">{name}</div>
-                    <ul className={`${type} ${dropdown.MenuDropdown}`}>
+                    <div className={`dd-name ${size.styleType} `}>{name}</div>
+                    <ul
+                        className={`${type} ${size.styleType} ${dropdown.MenuDropdown}`}
+                    >
                         {children}
                     </ul>
                 </Fragment>
@@ -95,7 +94,7 @@ const NavComponent = () => {
             {size.mobileSize ? (
                 <Fragment>
                     <MenuButton click={menu.menuState} style={menu.iconClass} />
-                    <ul className={menu.menuClass}>
+                    <ul className={`menu-${size.styleType} ${menu.menuClass}`}>
                         <Item
                             name="Home"
                             type="link"
@@ -108,7 +107,7 @@ const NavComponent = () => {
                             rute="/my-list"
                             click={menu.menuState}
                         />
-                        <Item name="Catalog" type="dropdown-menu">
+                        <Item name="Catalog" type="dd-menu">
                             <ItemDropdown
                                 name="Animes"
                                 type="link"
@@ -128,7 +127,20 @@ const NavComponent = () => {
                 <ul className="menu-desktop">
                     <Item name="Home" type="link" rute="/" />
                     <Item name="My List" type="link" rute="/my-list" />
-                    <Item name="Catalog" type="dropdown-menu" />
+                    <Item name="Catalog" type="dd-menu">
+                        <ItemDropdown
+                            name="Animes"
+                            type="link"
+                            rute="/catalog/animes"
+                            click={menu.menuState}
+                        />
+                        <ItemDropdown
+                            name="Mangas"
+                            type="link"
+                            rute="/catalog/mangas"
+                            click={menu.menuState}
+                        />
+                    </Item>
                 </ul>
             )}
         </nav>
