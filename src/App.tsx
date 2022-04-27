@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 /* import * as Font from "expo-font"; */
 import { Provider } from "react-redux";
 import { AppRouters } from "./Routers/AppRouters";

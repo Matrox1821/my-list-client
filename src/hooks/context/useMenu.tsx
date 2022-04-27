@@ -4,7 +4,7 @@ export const useMenu = () => {
     const menuState = () => {
         setOpenMenu(!openMenu);
     };
-    const menuClass = openMenu ? "menu-moblie active" : "menu-moblie";
+    const menuClass = openMenu ? " active" : "";
     const iconClass = openMenu ? "menu-icon active" : "menu-icon";
     return {
         openMenu,
