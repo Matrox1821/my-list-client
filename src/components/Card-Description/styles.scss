@@ -1,0 +1,28 @@
+.card_description {
+  width: fit-content;
+  background-color: #6d4af9;
+  padding: 15px 26px 10px 26px;
+  max-width: 300px;
+  color: white;
+
+  &__title {
+    padding-bottom: 15px;
+    color: white;
+    font-size: 12px;
+  }
+  &__descriptionAnime {
+    font-size: 12px;
+  }
+
+  &__containerButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    button {
+      color: white;
+      width: 135px;
+      background-color: #4724d0;
+      border: 2px solid white;
+    }
+  }
+}
