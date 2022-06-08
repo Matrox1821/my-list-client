@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routes } from "../helpers/routes";
 import { Layout } from "../components/Layout";
 import { HomePage, AnimesPage } from "../Pages";
+import { MyListPage } from "../Pages/MyListPage/MyListPage";
 export const AppRouters: FC = () => {
     return (
         <Router>
             <Layout>
                 <Routes>
                     <Route path={routes.home} element={<HomePage />} />
+                    <Route path={routes.mylist} element={<MyListPage />} />
                     <Route
                         path={routes.catalog.animes}
                         element={<AnimesPage />}

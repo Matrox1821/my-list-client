@@ -1,0 +1,18 @@
+.card_user {
+    margin: 0.5em;
+    display: flex;
+    &__user_image {
+        width: 40%;
+        border: 1px solid #6d4af9;
+        margin: 0.5em;
+    }
+    &__user_dates {
+        margin: 0.5em;
+        padding-top: 0.5em;
+        font-size: 16px;
+        color: #6d4af9;
+    }
+    &__username {
+        font-size: 22px;
+    }
+}

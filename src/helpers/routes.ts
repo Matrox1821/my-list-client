@@ -1,5 +1,6 @@
 export const routes = {
     home: "/",
+    mylist: "/my-list", //mylist: "/my-list  --id del usuario--"
     catalog: {
         animes: "/catalog/animes",
     },
