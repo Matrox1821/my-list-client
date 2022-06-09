@@ -9,7 +9,7 @@ export const MyListPage = (props: Props) => {
             <CardUser
                 src={user}
                 username="Matrox1821"
-                description="Me gusta black clover, programar y el basquet"
+                description="Me gusta black clover, programar y el basquet."
             />
         </section>
     );
