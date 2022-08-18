@@ -1,10 +1,11 @@
 import React, { FC } from "react";
-import "../../../assets/css/Header.css";
+import { useTheme } from "../../../context/ThemeContext";
 import { LogoMenu } from "./LogoMenu/LogoMenu";
 import { NavMenu } from "./NavMenu/NavMenu";
 export const Header: FC = () => {
+    const { theme } = useTheme();
     return (
-        <header>
+        <header className={`theme ${theme}`}>
             <LogoMenu />
             <NavMenu />
         </header>

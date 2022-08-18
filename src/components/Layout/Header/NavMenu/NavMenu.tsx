@@ -1,18 +1,28 @@
 import React, { Fragment } from "react";
-import { useSize } from "../../../../hooks/context/useSize";
-import { useMenu } from "../../../../hooks/context/useMenu";
+import { useSize } from "../../../../hooks/useSize";
+import { useMenu } from "../../../../hooks/useMenu";
+import { useDropdown } from "../../../../hooks/useDropdown";
 import { MenuButton } from "../MenuButton/MenuButton";
 import { Item } from "../Item/Item";
 import { ItemDropdown } from "../ItemDropdown/ItemDropdown";
+import { useTheme } from "../../../../context/ThemeContext";
 export const NavMenu = () => {
+    const { theme } = useTheme();
     const menu = useMenu();
     const size = useSize();
+    const dropdown = useDropdown();
+    const DropdownInteraction = () => {
+        menu.menuState();
+        dropdown.DropdownState();
+    };
     if (size.mobileSize) {
         return (
             <nav>
                 <Fragment>
                     <MenuButton click={menu.menuState} style={menu.iconClass} />
-                    <ul className={`menu-${size.styleType} ${menu.menuClass}`}>
+                    <ul
+                        className={`menu__${size.styleType} ${theme} ${menu.menuClass}`}
+                    >
                         <Item
                             name="Home"
                             type="link"
@@ -30,13 +40,13 @@ export const NavMenu = () => {
                                 name="Animes"
                                 type="link"
                                 rute="/catalog/animes"
-                                click={menu.menuState}
+                                click={DropdownInteraction}
                             />
                             <ItemDropdown
                                 name="Mangas"
                                 type="link"
                                 rute="/catalog/mangas"
-                                click={menu.menuState}
+                                click={DropdownInteraction}
                             />
                         </Item>
                     </ul>
@@ -46,7 +56,7 @@ export const NavMenu = () => {
     }
     return (
         <nav>
-            <ul className="menu-desktop">
+            <ul className="menu__desktop">
                 <Item name="Home" type="link" rute="/" />
                 <Item name="My List" type="link" rute="/my-list" />
                 <Item name="Catalog" type="dd-menu">
@@ -54,13 +64,13 @@ export const NavMenu = () => {
                         name="Animes"
                         type="link"
                         rute="/catalog/animes"
-                        click={menu.menuState}
+                        click={dropdown.DropdownState}
                     />
                     <ItemDropdown
                         name="Mangas"
                         type="link"
                         rute="/catalog/mangas"
-                        click={menu.menuState}
+                        click={dropdown.DropdownState}
                     />
                 </Item>
             </ul>

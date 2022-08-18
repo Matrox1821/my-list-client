@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Header } from "./Header";
 
 type Props = {
@@ -7,9 +7,9 @@ type Props = {
 
 export const Layout = ({ children }: Props) => {
     return (
-        <Fragment>
+        <div>
             <Header />
             <main>{children}</main>
-        </Fragment>
+        </div>
     );
 };

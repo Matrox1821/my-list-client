@@ -1,6 +1,7 @@
 import React from "react";
-import { useSize } from "../../../../hooks/context/useSize";
+import { useSize } from "../../../../hooks/useSize";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../../../context/ThemeContext";
 
 type ItemsDropdownProps = {
     name: string;
@@ -14,15 +15,16 @@ export const ItemDropdown = ({
     rute,
     click,
 }: ItemsDropdownProps) => {
+    const { theme } = useTheme();
     const size = useSize();
 
     return (
         <li
-            className={`dd-item ${size.mobileSize ? "mobile" : "desktop"}`}
+            className={`dd-item__${size.mobileSize ? "mobile" : "desktop"}`}
             onClick={click}
         >
-            <Link className="dd-link" to={rute}>
-                <div className={`dd-link-name ${size.styleType}`}>{name}</div>
+            <Link className={`dd-link ${theme}`} to={rute}>
+                <div className={`dd-link-name ${theme}`}>{name}</div>
             </Link>
         </li>
     );

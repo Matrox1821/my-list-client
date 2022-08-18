@@ -1,0 +1,329 @@
+/* ----- Header ----- */
+
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    &.light {
+        background-color: $secundary;
+    }
+    &.dark {
+        background-color: $secundary-dark;
+    }
+}
+
+/* ---- Logo ----- */
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* ----------------Menu Items Mobile Styles---------------- */
+
+/* --------Menu Mobile-Desktop-------- */
+.menu {
+    &__mobile {
+        margin: 0;
+        padding: 1em 0 0;
+        list-style-type: none;
+        height: calc(100% - 67.5px);
+        left: -100%;
+        width: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &.light.active {
+            background-color: $secundary;
+            left: 0;
+        }
+        &.dark.active {
+            background-color: $secundary-dark;
+            left: 0;
+        }
+    }
+    &__desktop {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* --------Items Mobile-Desktop-------- */
+.item {
+    &__mobile {
+        margin: 10px;
+
+        .link-name {
+            width: 200px;
+            height: 40px;
+            color: $primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+            &.light {
+                color: $primary;
+            }
+            &.dark {
+                color: $primary-dark;
+            }
+        }
+        &:hover .link-name {
+            &.light {
+                background-color: $primary;
+                color: $secundary;
+            }
+            &.dark {
+                background-color: $primary-dark;
+                color: $secundary-dark;
+            }
+        }
+    }
+    &__desktop {
+        margin: 10px;
+        .link-name {
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+            &.light {
+                color: $primary;
+            }
+            &.dark {
+                color: $primary-dark;
+            }
+        }
+        &:hover .link-name {
+            &.light {
+                background-color: $primary;
+                color: $secundary;
+            }
+            &.dark {
+                background-color: $primary-dark;
+                color: $secundary-dark;
+            }
+        }
+    }
+}
+.link {
+    text-decoration: none;
+}
+/* --------Dropdown Menu Mobile-------- */
+.dd-name {
+    &__mobile {
+        width: 200px;
+        height: 40px;
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        transition: all 0.5s ease;
+        &.light {
+            color: $primary;
+            &:hover {
+                list-style-type: none;
+                background-color: $primary;
+                color: $secundary;
+            }
+        }
+        &.dark {
+            color: $primary-dark;
+            &:hover {
+                list-style-type: none;
+                background-color: $primary-dark;
+                color: $secundary-dark;
+            }
+        }
+    }
+    &__desktop {
+        width: 100px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        &.light {
+            color: $primary;
+        }
+        &.dark {
+            color: $primary-dark;
+        }
+        &.light {
+            color: $primary;
+            &:hover {
+                list-style-type: none;
+                background-color: $primary;
+                color: $secundary;
+            }
+        }
+        &.dark {
+            color: $primary-dark;
+            &:hover {
+                list-style-type: none;
+                background-color: $primary-dark;
+                color: $secundary-dark;
+            }
+        }
+    }
+}
+
+.item {
+    &__mobile .dd-menu {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &.light {
+            color: $secundary;
+        }
+        &.dark {
+            color: $secundary-dark;
+        }
+        &.open {
+            max-height: 100%;
+        }
+    }
+    &__desktop .dd-menu {
+        margin: 10px 0 0 0;
+        padding: 0;
+        list-style-type: none;
+        max-height: 0px;
+        overflow: hidden;
+        position: absolute;
+        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &.light {
+            color: $secundary;
+        }
+        &.dark {
+            color: $secundary-dark;
+        }
+        &.open {
+            max-height: 100%;
+        }
+    }
+}
+
+/* --------Dropdown Item Mobile-------- */
+.dd-item {
+    &__mobile {
+        list-style-type: none;
+        .dd-link-name {
+            margin: 10px 0;
+            width: 200px;
+            height: 40px;
+            color: $secundary;
+            background-color: $primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+            &.light {
+                color: $secundary;
+                background-color: $primary;
+            }
+            &.dark {
+                color: $secundary-dark;
+                background-color: $primary-dark;
+            }
+        }
+        &:hover .dd-link-name {
+            &.light {
+                color: $secundary;
+                background-color: $primary;
+            }
+            &.dark {
+                color: $secundary-dark;
+                background-color: $primary-dark;
+            }
+        }
+    }
+    &__desktop {
+        list-style-type: none;
+        .dd-link-name {
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+            &.light {
+                color: $secundary;
+                background-color: $primary;
+            }
+            &.dark {
+                color: $secundary-dark;
+                background-color: $primary-dark;
+            }
+        }
+        &:hover .dd-link-name {
+            &.light {
+                color: $secundary;
+                background-color: $primary;
+            }
+            &.dark {
+                color: $secundary-dark;
+                background-color: $primary-dark;
+            }
+        }
+    }
+}
+.dd-link {
+    text-decoration: none;
+    &.light {
+        color: $primary;
+    }
+    &.dark {
+        color: $primary-dark;
+    }
+}
+
+/* ----------------Menu Icon Styles---------------- */
+.menu-icon {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    .line {
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin-block: 8px;
+        border-radius: 4px;
+        transition: transform 0.5s, opacity 0.25s;
+        &.light {
+            background-color: $primary;
+        }
+        &.dark {
+            background-color: $primary-dark;
+        }
+    }
+    &.active .line:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    &.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    &.active .line:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
