@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext"; /* 
 const socket = new WebSocket("ws://localhost:3001");
 socket.addEventListener("open", (event) => {
     console.log("conected to ws server");
 });
 socket.addEventListener("message", (event) => {
     console.log("message from server ", event.data);
-});
+}); */
 export const HomePage = () => {
     const { toggleTheme } = useTheme();
     const apiUrl = "http://localhost:3001/api/notes";
